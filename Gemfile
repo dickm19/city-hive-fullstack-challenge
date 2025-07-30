@@ -50,5 +50,6 @@ group :test do
   gem 'pry'
 end
 
-gem 'mongoid'
-gem 'rack-cors'
+gem "mongoid"
+gem "rack-cors"
+gem "bcrypt"
