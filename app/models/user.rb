@@ -1,7 +1,9 @@
 class User
   include Mongoid::Document
   include Mongoid::Timestamps
-  has_secure_password :transaction_password
+  include ActiveModel::SecurePassword
+
+  has_secure_password :password
   has_many :messages, dependent: :destroy
 
   field :username, type: String
