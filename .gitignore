@@ -36,3 +36,46 @@
 /.kamal
 
 .keep
+
+# Frontend files
+
+# Compiled output
+my-sms-messenger/dist
+my-sms-messenger/tmp
+my-sms-messenger/out-tsc
+my-sms-messenger/bazel-out
+
+# Node
+my-sms-messenger/node_modules
+my-sms-messenger/npm-debug.log
+my-sms-messenger/yarn-error.log
+
+# IDEs and editors
+my-sms-messenger/.idea/
+my-sms-messenger/.project
+my-sms-messenger/.classpath
+my-sms-messenger/.c9/
+my-sms-messenger/*.launch
+my-sms-messenger/.settings/
+my-sms-messenger/*.sublime-workspace
+
+# Visual Studio Code
+my-sms-messenger/.vscode/*
+my-sms-messenger/!.vscode/settings.json
+my-sms-messenger/!.vscode/tasks.json
+my-sms-messenger/!.vscode/launch.json
+my-sms-messenger/!.vscode/extensions.json
+my-sms-messenger/.history/*
+
+# Miscellaneous
+my-sms-messenger/.angular/cache
+my-sms-messenger/.sass-cache/
+my-sms-messenger/connect.lock
+my-sms-messenger/coverage
+my-sms-messenger/libpeerconnection.log
+my-sms-messenger/testem.log
+my-sms-messenger/typings
+
+# System files
+my-sms-messenger/.DS_Store
+my-sms-messenger/Thumbs.db
