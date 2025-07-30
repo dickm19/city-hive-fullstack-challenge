@@ -15,6 +15,11 @@ development:
       hosts:
         - localhost:27017
       options:
+        user: "<%= Rails.application.credentials.mongoid['user'] %>"
+        password: "<%= Rails.application.credentials.mongoid['password'] %>"
+        roles:
+          - 'dbOwner'
+        auth_source: admin
         # Note that all options listed below are Ruby driver client options (the mongo gem).
         # Please refer to the driver documentation of the version of the mongo gem you are using
         # for the most up-to-date list of options.
