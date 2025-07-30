@@ -58,6 +58,7 @@ my-sms-messenger/.c9/
 my-sms-messenger/*.launch
 my-sms-messenger/.settings/
 my-sms-messenger/*.sublime-workspace
+my-sms-messenger/.editorconfig
 
 # Visual Studio Code
 my-sms-messenger/.vscode/*
