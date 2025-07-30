@@ -48,6 +48,7 @@ group :test do
   gem "selenium-webdriver"
   gem "factory_bot_rails"
   gem 'pry'
+  gem 'ffaker'
 end
 
 gem "mongoid"
