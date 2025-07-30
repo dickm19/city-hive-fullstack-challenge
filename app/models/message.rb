@@ -4,4 +4,7 @@ class Message
 
   field :content, type: String
   belongs_to :user
+
+  validates :content, presence: true
+  validates :user, presence: true
 end
