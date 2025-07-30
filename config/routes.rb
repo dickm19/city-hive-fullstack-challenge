@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :users, defaults: { format: :json }
   resources :messages, defaults: { format: :json }
+  post "api/users/signup" => "users#signup", as: :user_signup
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
