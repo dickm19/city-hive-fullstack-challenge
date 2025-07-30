@@ -55,3 +55,4 @@ group :test do
 end
 
 gem 'mongoid'
+gem 'rack-cors'
