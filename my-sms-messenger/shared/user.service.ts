@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { User } from '../src/app/types';
 import { map } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class UserService {
   constructor(private _http: HttpClient) { }
   
