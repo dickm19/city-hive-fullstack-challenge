@@ -1,13 +1,17 @@
 class MessagesController < ApplicationController
+  before_action :set_message, only: %i[ show update destroy ]
+
   # GET /messages
   # GET /messages.json
   def index
     @messages = Message.all
+    render json: @messages, status: :ok
   end
 
   # GET /messages/1
   # GET /messages/1.json
   def show
+    render json: @message, status: :ok
   end
 
   # POST /messages
@@ -16,7 +20,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
 
     if @message.save
-      render :show, status: :created, location: @message
+      render json: @message, status: :created
     else
       render json: @message.errors, status: :unprocessable_entity
     end
@@ -26,7 +30,7 @@ class MessagesController < ApplicationController
   # PATCH/PUT /messages/1.json
   def update
     if @message.update(message_params)
-      render :show, status: :ok, location: @message
+      render json: @message, status: :ok
     else
       render json: @message.errors, status: :unprocessable_entity
     end
