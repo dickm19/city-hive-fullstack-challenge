@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :user do
     # Add fields as needed, for example:
-    username { "test_user" }
-    phone_number { "1234567890" }
-    password { "password@123" }
+    username { FFaker::Internet.user_name }
+    phone_number { FFaker::PhoneNumber.phone_number }
+    password { FFaker::Internet.password }
   end
 end
