@@ -14,9 +14,9 @@ class UsersController < ApplicationController
     render json: @user, status: :ok
   end
 
-  # POST /users
-  # POST /users.json
-  def create
+  # POST /users/signup
+  # POST /users/signup.json
+  def signup
     @user = User.new(user_params)
 
     if @user.save
