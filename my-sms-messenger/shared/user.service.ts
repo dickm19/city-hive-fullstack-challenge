@@ -8,7 +8,7 @@ export class UserService {
   constructor(private _http: HttpClient) { }
   
   signup(user: User) {
-    return this._http.post('/api/signup', user)
+    return this._http.post('api/users/signup', user)
       .pipe(map((response: any) => response.json()));
   }
 }
