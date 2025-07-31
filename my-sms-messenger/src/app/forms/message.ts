@@ -26,6 +26,7 @@ export class MessageTemplateComponent {
     sendMessage() {
         this._messageService.sendMessage(this.message).subscribe((response) => {
             console.log('Message sent successfully:', response);
+            this.clearMessage();
         });
     }
     clearMessage() {
