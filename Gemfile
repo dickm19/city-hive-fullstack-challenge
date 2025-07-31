@@ -54,3 +54,5 @@ end
 gem "mongoid"
 gem "rack-cors"
 gem "bcrypt"
+gem "omniauth"
+gem "omniauth-identity"
