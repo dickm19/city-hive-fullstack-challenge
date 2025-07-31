@@ -6,7 +6,9 @@
   <div class="content">
     <div *ngIf="currentUser">
       <h1>Welcome to My SMS Messenger</h1>
-      <p>Your current user is: {{ currentUser.username }}</p>
+      <div class="new-message">
+        <app-template-message [currentUser]="currentUser"></app-template-message>
+      </div>
     </div>
     <div *ngIf="!currentUser">
       <h1>Please Sign Up</h1>
