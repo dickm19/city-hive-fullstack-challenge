@@ -1,12 +1,17 @@
-
-
 <style>
 
 </style>
 
 <main class="main">
   <div class="content">
-    
+    <div *ngIf="currentUser">
+      <h1>Welcome to My SMS Messenger</h1>
+      <p>Your current user is: {{ currentUser.username }}</p>
+    </div>
+    <div *ngIf="!currentUser">
+      <h1>Please Sign Up</h1>
+      <app-template-signup></app-template-signup>
+    </div>
   </div>
 </main>
 
