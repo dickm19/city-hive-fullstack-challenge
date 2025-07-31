@@ -9,6 +9,11 @@
       <div class="new-message">
         <app-template-message [currentUser]="currentUser"></app-template-message>
       </div>
+      <div class="message-list">
+        <div *ngFor='let message of messages; let i = index'>
+            <label>{{message.content}}</label>
+        </div>
+      </div>
     </div>
     <div *ngIf="!currentUser">
       <h1>Please Sign Up</h1>
