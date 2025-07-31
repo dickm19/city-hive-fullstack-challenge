@@ -59,4 +59,4 @@ gem "omniauth-identity"
 gem "phonelib"
 gem "twilio-ruby"
 gem "dotenv"
-
+gem "active_model_serializers"
