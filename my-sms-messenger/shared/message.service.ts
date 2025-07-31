@@ -11,4 +11,9 @@ export class MessageService {
         return this._http.post('api/messages/send', message)
         .pipe(map((response: any) => response));
     }
+
+    getMessages() {
+        return this._http.get('api/messages/index')
+        .pipe(map((response: any) => response));
+    }
 }
