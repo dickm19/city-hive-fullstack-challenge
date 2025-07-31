@@ -1,0 +1,50 @@
+.message-form {
+    width: 30em;
+    border: 2px solid #ccc;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 0.5rem 1.5rem;
+    background-color: #000000;
+    color: rgb(190, 190, 190);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #333;
+    color: white;
+}
+
+.message-form #clear-button {
+    background-color: transparent;
+    color: black;
+    border: none;
+    text-decoration: underline;
+}
+
+.message-form .actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
