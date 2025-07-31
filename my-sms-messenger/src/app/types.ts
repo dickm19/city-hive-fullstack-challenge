@@ -5,9 +5,8 @@ interface User {
 }
 
 interface Message {
-    user_id: string;
     content: string;
-    timestamp: Date;
+    recipient_number: string;
 }
 
 export type { User, Message };
