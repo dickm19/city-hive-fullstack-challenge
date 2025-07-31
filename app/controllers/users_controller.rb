@@ -19,8 +19,8 @@ class UsersController < ApplicationController
   # POST /users/signup.json
   def signup
     @user = User.new(user_params)
-
     if @user.save
+      login!
       render json: @user, status: :created
     else
       render json: @user.errors, status: :unprocessable_entity
