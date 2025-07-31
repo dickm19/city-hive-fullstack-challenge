@@ -2,12 +2,13 @@ import { Component, signal, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { User } from './types';
 import { SignupTemplateComponent } from './forms/signup';
+import { MessageTemplateComponent } from './forms/message';
 import { UserService } from '../../shared/user.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, SignupTemplateComponent, CommonModule],
+  imports: [RouterOutlet, SignupTemplateComponent, CommonModule, MessageTemplateComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
