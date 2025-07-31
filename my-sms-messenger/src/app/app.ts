@@ -1,12 +1,13 @@
 import { Component, signal, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { RouterOutlet } from '@angular/router';
 import { User } from './types';
+import { SignupTemplateComponent } from './forms/signup';
 import { UserService } from '../../shared/user.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, SignupTemplateComponent, CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
