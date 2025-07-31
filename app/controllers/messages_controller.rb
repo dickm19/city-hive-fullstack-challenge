@@ -16,8 +16,8 @@ class MessagesController < ApplicationController
 
   # POST /messages
   # POST /messages.json
-  def create
-    @message = Message.new(message_params)
+  def send_message
+    @message = Message.new(message_params.merge(user_id: current_user.id))
 
     if @message.save
       render json: @message, status: :created
@@ -50,6 +50,6 @@ class MessagesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def message_params
-      params.fetch(:message, {}).permit(:content, :user_id)
+      params.fetch(:message, {}).permit(:content, :recipient_number)
     end
 end
