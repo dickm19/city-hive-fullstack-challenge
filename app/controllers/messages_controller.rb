@@ -7,13 +7,13 @@ class MessagesController < ApplicationController
   # GET /messages.json
   def index
     @messages = Message.where(user_id: current_user.id).order(created_at: :desc)
-    render json: @messages, status: :ok
+    render json: @messages, each_serializer: MessageSerializer, status: :ok
   end
 
   # GET /messages/1
   # GET /messages/1.json
   def show
-    render json: @message, status: :ok
+    render json: @message, serializer: MessageSerializer, status: :ok
   end
 
   # POST /messages
