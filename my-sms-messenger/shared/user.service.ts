@@ -12,5 +12,8 @@ export class UserService {
       .pipe(map((response: any) => response));
   }
 
+  getCurrentUser() {
+    return this._http.get('api/users/current')
+      .pipe(map((response: any) => response));
   }
 }
