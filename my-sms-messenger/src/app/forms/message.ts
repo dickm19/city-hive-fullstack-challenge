@@ -6,11 +6,24 @@ import { Message, User } from '../types';
 @Component({
     selector: 'app-template-message',
     template: `
-        Phone Number: <input type="text" [(ngModel)]="message.recipient_number">
-        Message: <textarea [(ngModel)]="message.content"></textarea>
-        <button (click)="sendMessage()">Send Message</button>
+        <div class="message-form">
+            <h1>New Message</h1>
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="text" [(ngModel)]="message.recipient_number">
+            </div>
+            <div class="form-group">
+                <label>Message</label>
+                <textarea [(ngModel)]="message.content"></textarea>
+            </div>
+            <div class="actions">
+                <button (click)="clearMessage()" id="clear-button">Clear</button>
+                <button (click)="sendMessage()">Submit</button>
+            </div>
+        </div>
     `,
     imports: [FormsModule],
+    styleUrl: './form.scss'
 })
 
 export class MessageTemplateComponent {
