@@ -9,6 +9,8 @@ export class UserService {
   
   signup(user: User) {
     return this._http.post('api/users/signup', user)
-      .pipe(map((response: any) => response.json()));
+      .pipe(map((response: any) => response));
+  }
+
   }
 }
