@@ -13,7 +13,7 @@ class User
   field uid: String
 
   validates :username, presence: true, uniqueness: true
-  validates :phone_number, presence: true, uniqueness: true
+  validates :phone_number, presence: true, uniqueness: true, phone: true
   validates :password, presence: true, length: { minimum: 8 }
 
   def self.create_with_omniauth(auth)
