@@ -1,4 +1,4 @@
-import { Component, Injectable } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { UserService } from '../../../shared/user.service';
 import { User } from '../types';
