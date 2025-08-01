@@ -1,3 +1,5 @@
+require 'twilio-ruby'
+
 class MessagesController < ApplicationController
   before_action :set_message, only: %i[ show update destroy ]
 
@@ -18,8 +20,13 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def send_message
     @message = Message.new(message_params.merge(user_id: current_user.id))
-
     if @message.save
+      @client = Twilio::REST::Client.new(ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN'])
+      message = @client.messages.create(
+        body: @message.content,
+        from: '+18332453640',
+        to: '+18777804236'
+      )
       render json: @message, status: :created
     else
       render json: @message.errors, status: :unprocessable_entity
