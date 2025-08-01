@@ -31,7 +31,7 @@ class MessagesController < ApplicationController
         from: '+18332453640',
         to: '+18777804236'
       )
-      render json: @message, status: :created
+      render json: @message, serializer: MessageSerializer, status: :created
     else
       render json: @message.errors, status: :unprocessable_entity
     end
