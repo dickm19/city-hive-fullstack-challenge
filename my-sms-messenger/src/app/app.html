@@ -4,6 +4,9 @@
 
 <main class="main">
   <div class="content">
+    <h1>MY SMS MESSENGER</h1>
+    <div class="logged-in-container" *ngIf="currentUser">
+      <button class="sign-out-button" (click)="handleSignOut()">Sign Out</button>
       <div class="message-container">
         <div class="new-message">
           <app-template-message class="message-form-component" [currentUser]="currentUser" (messageSent)="onMessageReceived($event)"></app-template-message>
