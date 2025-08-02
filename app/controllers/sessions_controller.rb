@@ -1,10 +1,9 @@
 class SessionsController < ApplicationController
-
     def is_logged_in?
         if user_signed_in? && current_user
-            render json: { logged_in: true, user: current_user }, status: :ok
+            render json: current_user, serializer: UserSerializer, status: :ok
         else
-            render json: { logged_in: false }, status: :ok
+            render json: false, status: :ok
         end
     end
 
