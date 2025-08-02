@@ -25,6 +25,8 @@ import { User } from '../types';
 })
 
 export class SignupTemplateComponent {
+    @Output() signedUp = new EventEmitter<User>();
+
     user: User = {
         username: '',
         password: '',
@@ -35,7 +37,7 @@ export class SignupTemplateComponent {
 
     signup() {
         this._userService.signup(this.user).subscribe((response) => {
-            console.log('User signed up successfully:', response);
+            this.signedUp.emit(response);
         });
     }
 }
