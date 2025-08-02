@@ -61,5 +61,7 @@ export class App implements OnInit {
     this.signUp = !this.signUp;
   }
 
+  handleSignUp(user: User) {
+    this.currentUser = user;
   }
 }
