@@ -31,7 +31,8 @@ export class MessageTemplateComponent {
 
     message: Message = {
         recipient_number: '',
-        content: ''
+        content: '',
+        id: ''
     };
 
     constructor(private _messageService: MessageService) {}
@@ -45,7 +46,8 @@ export class MessageTemplateComponent {
     clearMessage() {
         this.message = {
             recipient_number: '',
-            content: ''
+            content: '',
+            id: ''
         };
     }
 }
