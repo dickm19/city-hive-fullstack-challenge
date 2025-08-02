@@ -9,7 +9,16 @@
           <app-template-message class="message-form-component" [currentUser]="currentUser" (messageSent)="onMessageReceived($event)"></app-template-message>
         </div>
         <div class="message-list">
-        </div>
+          <h1>Message History ({{messages.length}})</h1>
+          <div *ngFor='let message of messages; trackBy: trackByMessages'>
+              <div class="message">
+                <div class="message-info">
+                  <span>{{message.formatted_phone_number}}</span>
+                  <span>{{message.sent_at}}</span>
+                </div>
+                <span class="message-content">{{message.content}}</span>
+              </div>
+          </div>
         </div>
       </div>
     </div>
