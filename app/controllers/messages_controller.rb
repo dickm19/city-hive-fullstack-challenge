@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
       @messages = Message.where(user_id: current_user.id).order(created_at: :desc)
       render json: @messages, each_serializer: MessageSerializer, status: :ok
     else
-      render json: {}, status: :ok
+      render json: [], status: :ok
     end
   end
 
