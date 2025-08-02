@@ -15,6 +15,16 @@ class SessionsController < ApplicationController
         redirect_to root_url, :notice => "Signed in!"
     end
 
+    def login
+        user = User.find_by(username: params[:username])
+        if user&.authenticate(params[:password])
+            session[:user_id] = user.id
+            render json: user, serializer: UserSerializer, status: :ok
+        else
+            render json: { logged_in: false, error: 'Invalid username or password' }, status: :unauthorized
+        end
+    end
+
     def destroy
         reset_session
         render json: { message: 'Logged out successfully' }, status: :ok
