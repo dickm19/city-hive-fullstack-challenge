@@ -38,5 +38,10 @@ export class App implements OnInit {
       this.currentUser = response;
     });
   }
+
+  onMessageReceived(message: Message) {
+    this.messages = [...this.messages, message]
+    this.cdr.detectChanges();
+  }
   }
 }
