@@ -19,6 +19,10 @@ export class App implements OnInit {
   constructor(private _userService: UserService, private _messageService: MessageService) {}
   protected readonly title = signal('my-sms-messenger');
 
+  trackByMessages(index: number, message: Message): string {
+    return message.id;
+  }
+
   ngOnInit() {
     // for some reason, the session is not being set correctly in the browser
     // so we are checking the session storage for the token
