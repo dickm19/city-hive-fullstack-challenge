@@ -9,7 +9,7 @@ import { User } from '../types';
         Username: <input type="text" [(ngModel)]="user.username">
         Password: <input type="password" [(ngModel)]="user.password">
         Phone Number: <input type="text" [(ngModel)]="user.phone_number">
-        <button (click)="login()">Sign Up</button>
+        <button (click)="login()">Log In</button>
     `,
     imports: [FormsModule],
 })
