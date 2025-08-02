@@ -1,4 +1,4 @@
-import { Component, signal, OnInit } from '@angular/core';
+import { Component, signal, OnInit, ChangeDetectorRef } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { User, Message } from './types';
 import { SignupTemplateComponent } from './forms/signup';
@@ -16,7 +16,9 @@ import { CommonModule } from '@angular/common';
 export class App implements OnInit {
   currentUser: User | null = null;
   messages: Message[] = [];
-  constructor(private _userService: UserService, private _messageService: MessageService) {}
+  signUp: boolean = true;
+
+  constructor(private _userService: UserService, private _messageService: MessageService, private cdr: ChangeDetectorRef) {}
   protected readonly title = signal('my-sms-messenger');
 
   trackByMessages(index: number, message: Message): string {
