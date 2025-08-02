@@ -6,10 +6,11 @@ import { MessageTemplateComponent } from './forms/message';
 import { UserService } from '../../shared/user.service';
 import { MessageService } from '../../shared/message.service';
 import { CommonModule } from '@angular/common';
+import { LoginTemplateComponent } from './forms/login';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, SignupTemplateComponent, CommonModule, MessageTemplateComponent],
+  imports: [RouterOutlet, SignupTemplateComponent, CommonModule, MessageTemplateComponent, LoginTemplateComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
