@@ -50,5 +50,9 @@ export class App implements OnInit {
     this.messages = [...this.messages, message]
     this.cdr.detectChanges();
   }
+  toggleSignUp() {
+    this.signUp = !this.signUp;
+  }
+
   }
 }
