@@ -6,12 +6,22 @@ import { User } from '../types';
 @Component({
     selector: 'app-template-signup',
     template: `
-        Username: <input type="text" [(ngModel)]="user.username">
-        Password: <input type="password" [(ngModel)]="user.password">
-        Phone Number: <input type="text" [(ngModel)]="user.phone_number">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" [(ngModel)]="user.username">
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" [(ngModel)]="user.password">
+        </div>
+        <div class="form-group">
+            <label for="phone_number">Phone Number:</label>
+            <input type="text" id="phone_number" [(ngModel)]="user.phone_number">
+        </div>
         <button (click)="signup()">Sign Up</button>
     `,
     imports: [FormsModule],
+    styleUrls: ['./form.scss'],
 })
 
 export class SignupTemplateComponent {
