@@ -18,10 +18,6 @@ import { User } from '../types';
             <label for="password">Password:</label>
             <input type="password" id="password" [(ngModel)]="user.password">
         </div>
-        <div class="form-group">
-            <label for="phone_number">Phone Number:</label>
-            <input type="text" id="phone_number" [(ngModel)]="user.phone_number">
-        </div>
         <button (click)="signup()">Sign Up</button>
     `,
     imports: [FormsModule],
