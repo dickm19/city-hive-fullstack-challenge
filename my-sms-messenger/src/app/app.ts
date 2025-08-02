@@ -20,13 +20,23 @@ export class App implements OnInit {
   protected readonly title = signal('my-sms-messenger');
 
   ngOnInit() {
-    this._userService.getCurrentUser().subscribe((response: any) => {
-      this.currentUser = response?.user;
-    });
+    // for some reason, the session is not being set correctly in the browser
+    // so we are checking the session storage for the token
+    sessionStorage.getItem("Token");
+    this.getCurrentUser();
+    this.getMessages();
+  }
 
+  getMessages() {
     this._messageService.getMessages().subscribe((response: any) => {
       this.messages = response;
-      console.log(response);
     });
+  }
+
+  getCurrentUser() {
+    this._userService.getCurrentUser().subscribe((response: any) => {
+      this.currentUser = response;
+    });
+  }
   }
 }
