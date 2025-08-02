@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { UserService } from '../../../shared/user.service';
 import { User } from '../types';
@@ -25,6 +25,7 @@ import { User } from '../types';
 })
 
 export class LoginTemplateComponent {
+    @Output() loggedIn = new EventEmitter<User>();
     user: User = {
         username: '',
         password: '',
@@ -35,7 +36,7 @@ export class LoginTemplateComponent {
 
     login() {
         this._userService.login(this.user).subscribe((response: any) => {
-            console.log('User signed up successfully:', response);
+            this.loggedIn.emit(response);
         });
     }
 }

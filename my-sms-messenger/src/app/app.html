@@ -89,7 +89,7 @@
     </div>
     <div *ngIf="!currentUser && !signUp">
       <h1>Log In</h1>
-      <app-template-login></app-template-login>
+      <app-template-login (loggedIn)="handleSignUp($event)"></app-template-login>
       <span>Don't have an account? <button class="signup-link" (click)="toggleSignUp()">Sign Up</button></span>
     </div>
   </div>
