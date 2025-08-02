@@ -9,9 +9,8 @@ Rails.application.routes.draw do
   post '/auth/:provider/callback' => 'sessions#create'
   get '/auth/failure' => 'sessions#failure'
   get '/signout' => 'sessions#destroy', :as => :signout
-  get '/signin' => 'sessions#new', :as => :signin
   get '/api/users/current' => 'sessions#is_logged_in?'
-
+  post '/login', to: 'sessions#login'
   post '/api/messages/send' => 'messages#send_message', as: :send_message
   get 'api/messages/index' => 'messages#index', as: :messages
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
