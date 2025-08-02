@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MessageService } from '../../../shared/message.service';
 import { Message, User } from '../types';
@@ -24,10 +24,12 @@ import { Message, User } from '../types';
     `,
     imports: [FormsModule],
     styleUrl: './form.scss',
+    outputs: ["messageSent"]
 })
 
 export class MessageTemplateComponent {
     @Input() currentUser!: User;
+    @Output() messageSent = new EventEmitter<Message>();
 
     message: Message = {
         recipient_number: '',
@@ -39,7 +41,7 @@ export class MessageTemplateComponent {
 
     sendMessage() {
         this._messageService.sendMessage(this.message).subscribe((response) => {
-            console.log('Message sent successfully:', response);
+            this.messageSent.emit(response);
             this.clearMessage();
         });
     }
