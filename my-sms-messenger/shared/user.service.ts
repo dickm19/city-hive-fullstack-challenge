@@ -8,12 +8,14 @@ export class UserService {
   constructor(private _http: HttpClient) { }
   
   signup(user: User) {
-    return this._http.post('api/users/signup', user)
+    return this._http.post('http://localhost:3000/api/users/signup', user, { withCredentials: true })
       .pipe(map((response: any) => response));
   }
 
   getCurrentUser() {
-    return this._http.get('api/users/current')
+    return this._http.get('http://localhost:3000/api/users/current', { withCredentials: true })
+      .pipe(map((response: any) => response));
+  }
       .pipe(map((response: any) => response));
   }
 }
