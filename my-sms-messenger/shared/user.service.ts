@@ -16,6 +16,14 @@ export class UserService {
     return this._http.get('http://localhost:3000/api/users/current', { withCredentials: true })
       .pipe(map((response: any) => response));
   }
+
+  signout() {
+    return this._http.get('http://localhost:3000/signout', { withCredentials: true })
+      .pipe(map((response: any) => response));
+  }
+
+  login(user: User) {
+    return this._http.post('http://localhost:3000/login', user, { withCredentials: true })
       .pipe(map((response: any) => response));
   }
 }
