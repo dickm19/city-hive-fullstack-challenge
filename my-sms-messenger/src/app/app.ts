@@ -50,6 +50,13 @@ export class App implements OnInit {
     this.messages = [...this.messages, message]
     this.cdr.detectChanges();
   }
+
+  handleSignOut() {
+    this._userService.signout().subscribe(() => {
+      this.currentUser = null;
+    })
+  }
+
   toggleSignUp() {
     this.signUp = !this.signUp;
   }
