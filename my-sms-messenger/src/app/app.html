@@ -4,8 +4,11 @@
 
 <main class="main">
   <div class="content">
+      <div class="message-container">
         <div class="new-message">
           <app-template-message class="message-form-component" [currentUser]="currentUser" (messageSent)="onMessageReceived($event)"></app-template-message>
+        </div>
+        <div class="message-list">
         </div>
         </div>
       </div>
