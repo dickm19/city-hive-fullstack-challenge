@@ -7,6 +7,10 @@ import { User } from '../types';
     selector: 'app-template-signup',
     template: `
         <div class="form-group">
+            <label for="phone_number">Phone Number:</label>
+            <input type="text" id="phone_number" [(ngModel)]="user.phone_number">
+        </div>
+        <div class="form-group">
             <label for="username">Username:</label>
             <input type="text" id="username" [(ngModel)]="user.username">
         </div>
