@@ -25,12 +25,16 @@ class MessagesController < ApplicationController
   def send_message
     @message = Message.new(message_params.merge(user_id: current_user.id))
     if @message.save
-      @client = Twilio::REST::Client.new(ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"])
-      message = @client.messages.create(
-        body: @message.content,
-        from: "+18332453640",
-        to: "+18777804236"
-      )
+      if rails.env.test?
+        puts "Test environment: Skipping actual message sending."
+      else
+        @client = Twilio::REST::Client.new(ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"])
+        message = @client.messages.create(
+          body: @message.content,
+          from: "+18332453640",
+          to: "+18777804236"
+        )
+      end
       render json: @message, serializer: MessageSerializer, status: :created
     else
       render json: @message.errors, status: :unprocessable_entity
