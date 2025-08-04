@@ -13,4 +13,11 @@ interface Message {
     id: string;
 }
 
-export type { User, Message };
+interface UserErrors {
+        phone_number?: string[];
+        username?: string[];
+        password?: string[];
+    }
+
+
+export type { User, Message, UserErrors };
