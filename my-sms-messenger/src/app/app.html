@@ -22,8 +22,10 @@
     padding: 1rem;
     border-radius: 10px;
     margin-top: 1rem;
+    margin-right: 1rem;
     overflow: scroll;
     height: 50vh;
+    max-width: 50vw;
   }
 
   .new-message {
@@ -36,6 +38,7 @@
     flex-direction: column;
     margin-top: 1rem;
     align-items: center;
+    max-width: 50vw;
   }
 
   .message-content {
@@ -65,6 +68,10 @@
     margin-top: 1rem;
   }
 
+  .signup, .login {
+    text-align: center;
+  }
+
 </style>
 
 <main class="main">
@@ -90,12 +97,12 @@
         </div>
       </div>
     </div>
-    <div *ngIf="!currentUser && signUp">
+    <div class="signup" *ngIf="!currentUser && signUp">
       <h1>Sign Up</h1>
       <app-template-signup (signedUp)="handleSignUp($event)"></app-template-signup><br/>
       <span>Already have an account? <button class="login-button" (click)="toggleSignUp()">Log In</button></span>
     </div>
-    <div *ngIf="!currentUser && !signUp">
+    <div class="login" *ngIf="!currentUser && !signUp">
       <h1>Log In</h1>
       <app-template-login (loggedIn)="handleSignUp($event)"></app-template-login><br/>
       <span>Don't have an account? <button class="signup-link" (click)="toggleSignUp()">Sign Up</button></span>

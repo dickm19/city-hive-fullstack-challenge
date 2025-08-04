@@ -54,3 +54,11 @@ button:hover {
     font-size: 0.875rem;
     margin-top: 0.5rem;
 }
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 50%;
+    margin: 0 auto;
+}
