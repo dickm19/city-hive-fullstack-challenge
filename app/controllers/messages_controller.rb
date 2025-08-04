@@ -1,7 +1,7 @@
 require "twilio-ruby"
 
 class MessagesController < ApplicationController
-  before_action :set_message, only: %i[ show update destroy ]
+  before_action :set_message, only: %i[ show ]
 
   # GET /messages
   # GET /messages.json
@@ -37,21 +37,6 @@ class MessagesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /messages/1
-  # PATCH/PUT /messages/1.json
-  def update
-    if @message.update(message_params)
-      render json: @message, status: :ok
-    else
-      render json: @message.errors, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /messages/1
-  # DELETE /messages/1.json
-  def destroy
-    @message.destroy!
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
