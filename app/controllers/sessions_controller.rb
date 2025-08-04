@@ -9,8 +9,8 @@ class SessionsController < ApplicationController
 
     def create
         auth = request.env["omniauth.auth"]
-        user = User.where(:provider => auth['provider'],
-                            :uid => auth['uid']).first || User.create_with_omniauth(auth)
+        user = User.where(:provider => auth["provider"],
+                            :uid => auth["uid"]).first || User.create_with_omniauth(auth)
         session[:user_id] = user.id
         redirect_to root_url, :notice => "Signed in!"
     end
@@ -21,17 +21,17 @@ class SessionsController < ApplicationController
             session[:user_id] = user.id
             render json: user, serializer: UserSerializer, status: :ok
         else
-            render json: { logged_in: false, error: 'Invalid username or password' }, status: :unauthorized
+            render json: { logged_in: false, error: "Invalid username or password" }, status: :unauthorized
         end
     end
 
     def destroy
         reset_session
-        render json: { message: 'Logged out successfully' }, status: :ok
+        render json: { message: "Logged out successfully" }, status: :ok
     end
 
     def new
-        redirect_to '/auth/identity'
+        redirect_to "/auth/identity"
     end
 
     def failure

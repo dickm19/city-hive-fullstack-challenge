@@ -47,8 +47,8 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "factory_bot_rails"
-  gem 'pry'
-  gem 'ffaker'
+  gem "pry"
+  gem "ffaker"
 end
 
 gem "mongoid"

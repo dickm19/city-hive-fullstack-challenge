@@ -18,11 +18,11 @@ class User
 
   def self.create_with_omniauth(auth)
     create! do |user|
-      user.provider = auth['provider']
-      user.uid = auth['uid']
-      if auth['info']
-        user.name = auth['info']['name'] || ""
-        user.phone_number = auth['info']['phone_number'] || ""
+      user.provider = auth["provider"]
+      user.uid = auth["uid"]
+      if auth["info"]
+        user.name = auth["info"]["name"] || ""
+        user.phone_number = auth["info"]["phone_number"] || ""
       end
     end
   end
