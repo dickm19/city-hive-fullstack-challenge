@@ -11,14 +11,14 @@ import { User, UserErrors } from '../types';
             <label for="phone_number">Phone Number:</label>
             <input type="text" id="phone_number" [(ngModel)]="user.phone_number">
             <div class="error" *ngIf="userErrors.phone_number">
-                <span>{{ userErrors.phone_number }}</span>
+                <span> Please enter a valid phone number.</span>
             </div>
         </div>
         <div class="form-group">
             <label for="username">Username:</label>
             <input type="text" id="username" [(ngModel)]="user.username">
             <div class="error" *ngIf="userErrors.username">
-                <span>{{ userErrors.username }}</span>
+                <span>Username {{ userErrors.username }}</span>
             </div>
         </div>
         <div class="form-group">
