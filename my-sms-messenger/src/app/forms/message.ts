@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';  
 import { MessageService } from '../../../shared/message.service';
 import { Message, User } from '../types';
 
@@ -15,14 +16,18 @@ import { Message, User } from '../types';
             <div class="form-group">
                 <label>Message</label>
                 <textarea [(ngModel)]="message.content"></textarea>
+                <span *ngIf="message.content.length > 160" class="error">
+                    {{ message.content.length }}/160
+                </span>
+                <span *ngIf="message.content.length <= 160" class="character-count">{{ message.content.length }}/160</span>
             </div>
             <div class="actions">
                 <button (click)="clearMessage()" id="clear-button">Clear</button>
-                <button (click)="sendMessage()">Submit</button>
+                <button [disabled]="message.content.length > 160" (click)="sendMessage()">Submit</button>
             </div>
         </div>
     `,
-    imports: [FormsModule],
+    imports: [FormsModule, CommonModule],
     styleUrl: './form.scss',
     outputs: ["messageSent"]
 })
@@ -36,7 +41,7 @@ export class MessageTemplateComponent {
         content: '',
         id: ''
     };
-
+    
     constructor(private _messageService: MessageService) {}
 
     sendMessage() {
