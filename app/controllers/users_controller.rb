@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       login!
       render json: @user, serializer: UserSerializer, status: :created
     else
-      render json: @user.errors, status: :unprocessable_entity
+      render json: { messages: @user.errors }, status: :bad_request
     end
   end
 
