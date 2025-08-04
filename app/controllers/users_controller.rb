@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ show update destroy ]
+  before_action :set_user, only: %i[ show ]
   wrap_parameters :user, include: [ :username, :password, :phone_number ]
 
   # GET /users/1
@@ -18,22 +18,6 @@ class UsersController < ApplicationController
     else
       render json: { messages: @user.errors }, status: :bad_request
     end
-  end
-
-  # PATCH/PUT /users/1
-  # PATCH/PUT /users/1.json
-  def update
-    if @user.update(user_params)
-      render json: @user, status: :ok
-    else
-      render json: @user.errors, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /users/1
-  # DELETE /users/1.json
-  def destroy
-    @user.destroy!
   end
 
   private
