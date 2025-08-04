@@ -7,6 +7,6 @@ class Message
   belongs_to :user
 
   validates :content, presence: true
-  validates :recipient_number, presence: true, phone: true
+  validates :recipient_number, presence: true, phone: { possible: true }
   validates :user, presence: true
 end
