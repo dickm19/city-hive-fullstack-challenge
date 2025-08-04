@@ -57,6 +57,14 @@
     height: 100%;
   }
 
+  .signup-link, .login-button, .sign-out-button {
+    background-color: transparent;
+    color: black;
+    border: none;
+    text-decoration: underline;
+    margin-top: 1rem;
+  }
+
 </style>
 
 <main class="main">
@@ -84,12 +92,12 @@
     </div>
     <div *ngIf="!currentUser && signUp">
       <h1>Sign Up</h1>
-      <app-template-signup (signedUp)="handleSignUp($event)"></app-template-signup>
+      <app-template-signup (signedUp)="handleSignUp($event)"></app-template-signup><br/>
       <span>Already have an account? <button class="login-button" (click)="toggleSignUp()">Log In</button></span>
     </div>
     <div *ngIf="!currentUser && !signUp">
       <h1>Log In</h1>
-      <app-template-login (loggedIn)="handleSignUp($event)"></app-template-login>
+      <app-template-login (loggedIn)="handleSignUp($event)"></app-template-login><br/>
       <span>Don't have an account? <button class="signup-link" (click)="toggleSignUp()">Sign Up</button></span>
     </div>
   </div>
