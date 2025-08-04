@@ -17,5 +17,4 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     get user_url(@user), as: :json
     assert_response :success
   end
-
 end

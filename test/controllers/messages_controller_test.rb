@@ -7,7 +7,7 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
     @user.update(password: "password") # Ensure user has a password for login
     post login_url, params: { username: @user.username, password: @user.password }, as: :json
   end
-  
+
   test "should get index" do
     get messages_url, as: :json
     assert_response :success
