@@ -18,7 +18,7 @@ class ApplicationController < ActionController::API
     end
 
     def user_signed_in?
-        return true if current_user
+        true if current_user
     end
 
     def correct_user?
