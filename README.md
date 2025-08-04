@@ -12,4 +12,6 @@ This is my submission for the City Hive Full-Stack Exercise.
   * rails test
 
 * Deployment instructions
+  * Angular Frontend ~> `ng serve --proxy-config proxy.conf.js`
+  * Rails Backend ~> `rails server`
 
