@@ -63,5 +63,6 @@ export class App implements OnInit {
 
   handleSignUp(user: User) {
     this.currentUser = user;
+    this.getMessages();
   }
 }
