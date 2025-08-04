@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is my submission for the City Hive Full-Stack Exercise.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
+## Config/setup
+* Versions:
+  * Ruby ~> 3.2.0
+  * Rails ~> 8.0.2
+  * Angular ~> 20.1.3
 
 * How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
+  * rails test
 
 * Deployment instructions
 
-* ...
