@@ -25,7 +25,7 @@ class MessagesController < ApplicationController
   def send_message
     @message = Message.new(message_params.merge(user_id: current_user.id))
     if @message.save
-      if rails.env.test?
+      if Rails.env.test?
         puts "Test environment: Skipping actual message sending."
       else
         @client = Twilio::REST::Client.new(ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"])
