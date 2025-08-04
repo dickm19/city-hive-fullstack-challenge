@@ -29,12 +29,4 @@ class SessionsController < ApplicationController
         reset_session
         render json: { message: "Logged out successfully" }, status: :ok
     end
-
-    def new
-        redirect_to "/auth/identity"
-    end
-
-    def failure
-        redirect_to root_url, alert: "Authentication error: #{params[:message].humanize}"
-    end
 end
