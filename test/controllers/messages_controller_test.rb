@@ -3,7 +3,8 @@ require "test_helper"
 class MessagesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @message = create(:message)
-    @user = create(:user)
+    @user = @message.user
+    @user.update(password: "password") # Ensure user has a password for login
     post login_url, params: { username: @user.username, password: @user.password }, as: :json
   end
   
