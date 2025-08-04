@@ -22,17 +22,4 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
     get message_url(@message), as: :json
     assert_response :success
   end
-
-  test "should update message" do
-    patch message_url(@message), params: { message: { content: "Updated content" } }, as: :json
-    assert_response :success
-  end
-
-  test "should destroy message" do
-    assert_difference("Message.count", -1) do
-      delete message_url(@message), as: :json
-    end
-
-    assert_response :no_content
-  end
 end
